@@ -1,0 +1,28 @@
+@import "./../../../assets/_colors.scss";
+@import "./../../../assets/_mixin.scss";
+.container-search {
+  width: 80%;
+  .box-search {
+    width: 100%;
+    position: relative;
+    #search {
+      width: 100%;
+      padding: 15px 40px 15px 15px;
+      border-radius: 50px;
+      font-size: 1rem;
+      box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    }
+    .btn-search {
+      position: absolute;
+      top: 50%;
+      right: 1%;
+      transform: translate(-50%, -50%);
+      color: $green;
+      background-color: transparent;
+      font-size: 1rem;
+    }
+  }
+  @include md {
+    width: 50%;
+  }
+}

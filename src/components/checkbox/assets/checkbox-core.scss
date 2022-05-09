@@ -1,0 +1,21 @@
+@import "./../../../assets/_colors.scss";
+.checkbox-core {
+  width: 14px;
+  height: 14px;
+  background-color: $white;
+  border: 1px solid $gray;
+  border-radius: 2px;
+  display: inline-block;
+  cursor: pointer;
+}
+.checkbox-core.active {
+  background-color: $blue;
+  border: 1px solid $blue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  i {
+    color: #fff;
+    font-size: 10px;
+  }
+}

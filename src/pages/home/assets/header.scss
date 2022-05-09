@@ -1,0 +1,31 @@
+@import "./../../../assets/_colors.scss";
+@import "./../../../assets/_mixin.scss";
+.header {
+  padding: 1.5em 2em;
+  .main {
+    flex-direction: row-reverse;
+    .menu-user-drop-down {
+      position: relative;
+    }
+    @include md {
+      flex-direction: row;
+    }
+    .signin button,
+    .about button {
+      color: $gray;
+      font-size: 1rem;
+      @include md {
+        font-size: 1.2rem;
+      }
+    }
+    .logo {
+      h1 {
+        font-size: 0.9rem;
+        font-family: vazir;
+        @include md {
+          font-size: 1.2rem;
+        }
+      }
+    }
+  }
+}

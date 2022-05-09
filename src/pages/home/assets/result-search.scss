@@ -1,0 +1,12 @@
+@import "./../../../assets/_colors.scss";
+@import "./../../../assets/_mixin.scss";
+.result-search {
+  width: 80%;
+  max-height: 300px;
+  overflow-y: scroll;
+  position: relative;
+  background-color: $white;
+  @include md {
+    width: 50%;
+  }
+}

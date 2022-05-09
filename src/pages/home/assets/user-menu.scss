@@ -1,0 +1,38 @@
+@import "./../../../assets/_mixin.scss";
+@import "./../../../assets/_colors.scss";
+.user-menu {
+  max-width: 150px;
+  width: 100px;
+  background-color: #fff;
+  position: absolute;
+  left: 0;
+  margin-top: 10px;
+  z-index: 999;
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 3%;
+    width: 0;
+    height: 0;
+    border-bottom: 6px solid #fff;
+    border-right: 6px solid transparent;
+    border-left: 6px solid transparent;
+  }
+  .item {
+    &:hover {
+      background-color: $light;
+    }
+    i {
+      color: $blue;
+    }
+  }
+  @include md {
+    & {
+      right: 0;
+      &::after {
+        right: 3%;
+      }
+    }
+  }
+}
