@@ -19,7 +19,11 @@ interface Props {
 const DropDown: FC<Props> = ({ children }) => {
   const [active, setActive] = useState<boolean>(false);
   const childNode = Children.map(children, (child: any) => {
-    const clone = cloneElement(child && child, { active, setActive });
+    const clone = cloneElement(child && child, {
+      isOpen: active,
+      show: () => setActive(true),
+      onClose: () => setActive(false),
+    });
     return clone;
   });
   return <Fragment>{childNode}</Fragment>;

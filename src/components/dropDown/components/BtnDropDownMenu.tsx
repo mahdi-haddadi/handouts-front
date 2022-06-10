@@ -1,11 +1,7 @@
 import { ICloneProps } from "../DropDown";
 
-const BtnDropDownMenu = ({
-  active,
-  setActive,
-  children,
-}: ICloneProps | any) => {
-  return <div onClick={() => setActive(!active)}>{children}</div>;
+const BtnDropDownMenu = ({ show, children }: ICloneProps | any) => {
+  return <div className="btn-dd" onClick={show}>{children}</div>;
 };
 
 export default BtnDropDownMenu;

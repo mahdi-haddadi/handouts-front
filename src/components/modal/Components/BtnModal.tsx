@@ -1,6 +1,6 @@
-const BtnModal = ({ children, setActive }: any) => {
+const BtnModal = ({ children, show }: any) => {
   return (
-    <div className="btn-modal" onClick={() => setActive(true)}>
+    <div className="btn-modal" onClick={show}>
       {children}
     </div>
   );

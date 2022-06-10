@@ -7,6 +7,7 @@ import UserMenu from "./UserMenu";
 import BtnModal from "../../../components/modal/Components/BtnModal";
 import InsideModal from "../../../components/modal/Components/InsideModal";
 import Modal from "../../../components/modal/Modal";
+import { useEffect, useState } from "react";
 
 const Header = () => {
   const { width } = useWindowDimensions();
@@ -20,6 +21,7 @@ const Header = () => {
               <div className="signin">
                 <button>
                   <i className="fa-solid fa-user"></i>
+                  user
                 </button>
               </div>
             </BtnDropDownMenu>
@@ -38,11 +40,12 @@ const Header = () => {
                 <div className="about">
                   <button>
                     <i className="fa-solid fa-circle-question"></i>
+                    modal
                   </button>
                 </div>
               )}
             </BtnModal>
-            <InsideModal title="this is a modal">
+            <InsideModal title="این یک مودال است">
               <p className="px-16 py-8">
                 لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با
                 استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله

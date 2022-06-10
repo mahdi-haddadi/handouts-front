@@ -1,25 +1,33 @@
 @import "./../../../assets/_colors.scss";
 .inside-modal {
-  .layer {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    background-color: rgba($color: $black, $alpha: 0.6);
-    z-index: 998;
-    overflow: hidden;
-  }
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(131, 128, 128, 0.3);
+  // opacity: 0;
+  // transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1);
+  // transition-delay: 300ms;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  // backdrop-filter: blur(1px);
+  width: 100%;
+  height: 100vh;
   .modal {
     width: 50vh;
     max-height: 100vw;
-    background-color: #fff;
     position: absolute;
-    overflow: scroll;
+    overflow-y: auto;
+    overflow-x: hidden;
     z-index: 999;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    // top: 50%;
+    // left: 50%;
+    // transform: translate(-50%, -60%);
+    // transform: translate(-50%, -50%);
+    border-radius: 10px;
+    // transition: all 200ms;
+    // cubic-bezier(0.4, 0, 0.2, 1)
+    // opacity: 0;
     &::-webkit-scrollbar {
       width: 4px;
       background-color: $light;
@@ -32,14 +40,30 @@
       padding: 20px 10px;
       border-bottom: 1px solid $gray;
       max-height: 100px;
+      background-color: $blue;
+      color: #fff;
       .close-modal {
         position: absolute;
         right: 3%;
         top: 10%;
         i {
+          color: #fff;
           font-size: 1.1rem;
         }
       }
     }
+    .content {
+      background-color: $light;
+    }
   }
 }
+// .inside-modal.active {
+//   transition: all 200ms;
+//   opacity: 1 !important;
+//   .modal {
+//     transform: translate(-50%, -50%);
+//     opacity: 1 !important;
+//     transition-delay: 150ms;
+//     transition-duration: 350ms;
+//   }
+// }

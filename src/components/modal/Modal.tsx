@@ -16,12 +16,20 @@ export interface ICloneProps {
 }
 interface Props {
   children: ReactNode;
-  show?:boolean
+  open?: boolean;
 }
-const Modal: FC<Props> = ({ show,children }) => {
-  const [active, setActive] = useState<boolean>(show || false);
+const Modal: FC<Props> = ({ open, children }) => {
+  const [active, setActive] = useState<boolean>(open || false);
   const cloneChild = Children.map(children, (child: any) => {
-    const clone = cloneElement(child, { active, setActive });
+    const clone = cloneElement(child, {
+      isOpen: active,
+      show: () => {
+        setActive(true);
+      },
+      onClose: () => {
+        setActive(false);
+      },
+    });
     return clone;
   });
   return <Fragment>{cloneChild}</Fragment>;

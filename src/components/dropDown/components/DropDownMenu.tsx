@@ -1,12 +1,34 @@
+import { AnimatePresence, motion } from "framer-motion";
 import useClickOutSide from "../../../hooks/useClickOutSide";
 import { ICloneProps } from "../DropDown";
 
-const DropDownMenu = ({ active, setActive, children }: ICloneProps | any) => {
-  const refNode = useClickOutSide(() => setActive(false));
+const DropDownMenu = ({ isOpen, onClose, children }: ICloneProps | any) => {
+  const refNode = useClickOutSide(() => onClose());
   return (
-    <div ref={refNode}>
-      {active && children}
-    </div>
+    <AnimatePresence>
+      {isOpen && (
+        <motion.div
+          initial={{
+            opacity: 0,
+            scale: 0.9,
+            x: 10,
+          }}
+          animate={{
+            opacity: 1,
+            scale: 1,
+            x: 0,
+          }}
+          exit={{
+            opacity: 0,
+            scale: 0.9,
+            x: 10,
+          }}
+          ref={refNode}
+        >
+          {children}
+        </motion.div>
+      )}
+    </AnimatePresence>
   );
 };
 
